@@ -1,0 +1,53 @@
+﻿@using System;
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.UI.Construct;
+
+@namespace Sandbox
+@inherits Panel
+
+@code
+{
+	public Panel TextContainer;
+	public Label Weapon;
+	public Label Inventory;
+	public Panel Icon;
+
+	public AmmoHud()
+	{
+
+		TextContainer = Add.Panel( "textContainer" );
+		Weapon = TextContainer.Add.Label( "100", "weapon" );
+		Inventory = TextContainer.Add.Label( "100", "inventory" );
+		Icon = Add.Panel( "icon" );
+	}
+
+	public override void Tick()
+	{
+		var player = Game.LocalPawn as SandboxPlayer;
+		if ( player == null ) return;
+
+		var weapon = player.ActiveChild as Weapon;
+		var isValid = (weapon != null && !weapon.IsMelee);
+
+		SetClass( "active", isValid );
+		SetClass("low-ammo", weapon != null && weapon.Reloads < 3);
+
+		if ( !isValid ) return;
+
+		//Icon.Style.SetBackgroundImage( weapon.Config.Icon );
+		Weapon.Text = $"{weapon.Ammo}";
+
+		if ( !weapon.reloadinfinite )
+		{
+			var inv = weapon.GetAmmo();
+			Inventory.Text = $"/ {inv}";
+			Inventory.SetClass( "active", inv >= 0 );
+		}
+		else
+		{
+			Inventory.Text = $"/ ∞";
+			Inventory.SetClass( "active", true );
+		}
+	}
+}

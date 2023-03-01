@@ -1,0 +1,239 @@
+﻿
+@import "_packageicon.scss";
+@import "_tabs.scss";
+@import "_packagelist.scss";
+
+inventorymenu
+{
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	padding: 80px 100px;
+	padding-bottom: 200px;
+	border-radius: 5px;
+	pointer-events: none;
+	transition: all 0.1s ease-out;
+	position: absolute;
+	font-family: poppins;
+	opacity: 0;
+	z-index: 10;
+	//backdrop-filter: blur( 5px );	
+    background-color: rgba( #000000,0.411 );
+	transform: scale( 0.9 );
+	
+	.left
+	{
+		flex-grow: 1;
+		flex-direction: column;
+		position: relative;
+		left: -500px;
+		transition: all 0.3s ease-in;
+
+		.body
+		{
+			flex-grow: 1;
+		}
+	}
+
+	.right
+	{
+		margin-left: 50px;
+		flex-direction: column;
+		min-width: 400px;
+		flex-shrink: 0;
+		left: 500px;
+		transition: all 0.3s ease-in;
+
+		.body
+		{
+			//	background-color: rgba( #333, 0.95 );
+			flex-grow: 1;
+			padding: 10px;
+
+			.toollist
+			{
+				flex-direction: column;
+				width: 150px;
+				color: #686666;
+				font-size: 11px;
+				transition: all 0.2s ease-out;
+				overflow: scroll;
+				
+				//background-color: rgba( #111, 0.7 );
+
+				button
+				{
+					padding: 3px 10px;
+					font-size: 11px;
+					transition: all 0.2s ease-out;
+					cursor: pointer;
+					border: none;
+					background-color: transparent;
+					color: #aaa;
+					text-align: left;
+					backdrop-filter: blur( 5px );
+
+					//border-left: 3px solid transparent;
+
+					&:hover
+					{
+						border-left: 3px solid #3273eb;
+						color: rgb(153, 152, 152);
+					}
+
+					&.active
+					{
+						border-left: 5px solid #085bf5;
+						color: rgb(129, 126, 126);
+					}
+				}
+			}
+
+			.inspector
+			{
+				//background-color: rgba( #111, 0.7 );
+				flex-grow: 1;
+				margin-left: 5px;
+				border-radius: 0 3px 3px 0;
+			}
+		}
+	}
+}
+
+.inventorymenuopen inventorymenu
+{
+	transition: all 0.2s ease-out;
+	pointer-events: all;
+	opacity: 1;
+	transform: scale( 1 );
+	.left, .right
+	{
+		left: 0;
+		transition: all 0.1s ease-out;
+	}
+}
+
+
+.spawnpage
+{
+	display: none;
+	opacity: 0;
+	transition: all 0.2s ease-out;
+	pointer-events: none;
+	
+
+	&.active
+	{
+		display: flex;
+		opacity: 1;
+		pointer-events: all;
+
+	}
+
+	.canvas
+	{
+		overflow: scroll;
+		width: 100%;
+		flex-grow: 1;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 10px;
+		border-radius: 5px;
+		//background-color: rgba( #111, 0.7 );
+		padding: 10px;
+		transition: all 0.2s ease-out;
+
+		
+
+
+		.cell
+		{
+			padding: 5px;
+		}
+
+		.icon
+		{
+			border-radius: 8px;
+			color: rgba( #fff, 0.5 );
+			font-size: 12px;
+			text-align: center;
+			cursor: pointer;
+			width: 100%;
+			height: 100%;
+			background-position: center;
+			background-size: cover;
+			background-color: rgba(black, 0.0);
+			background-image: url( /entity/inventoryicon.png );
+			transition: all 0.2s ease-out;
+			position: relative;
+
+			label
+			{
+				font-size: 9px;
+				position: absolute;
+				bottom: -17px;
+				left: 0;
+				right: 0;
+				pointer-events: none;
+				text-align: center;
+				color: rgba( #fff, 0.5 );
+				
+			}
+
+			&:hover
+			{
+				color: #fff;
+				background-color: rgba(black, 0.1);
+				border-bottom: 5px solid rgba(0, 100, 250, 0.2);
+
+
+			}
+
+			&:active
+			{
+				color: #fff;
+				background-color: rgba(black, 0.2);
+				border-bottom: 5px solid rgba(0, 250, 235,0.2);
+
+			}
+		}
+	}
+}
+
+
+inventorymenu .sidebar
+{
+	flex-direction: column;
+	width: 30px;
+	padding: 10px;
+
+	.group
+	{
+		flex-direction: column;
+		width: 100%;
+		margin-bottom: 10px;
+		transition: all 0.2s ease-out;
+		overflow: scroll;
+		
+		//background-color: rgba( #111, 0.7 );
+
+	}
+
+	button
+	{
+		cursor: pointer;
+		border-radius: 5px;
+		color: white;
+		font-size: 11px;
+		padding: 3px 10px;
+		margin-bottom: 5px;
+		transition: all 0.2s ease-out;
+		border: none;
+		background-color: transparent;
+		text-align: left;
+		border-left: 3px solid transparent;
+		
+	}
+}
+

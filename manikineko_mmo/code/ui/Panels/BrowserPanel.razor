@@ -1,0 +1,91 @@
+﻿@using System;
+@using Sandbox.UI;
+@namespace Manikineko.MMO.Core.ui.Panels
+
+<style>
+
+    column
+    {
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
+
+    column row
+    {
+        padding: 5px;
+        font-size: 20px;
+        flex-grow: 0;
+        flex-shrink: 1;
+
+        div:first-child
+        {
+            font-weight: bold;
+            width: 200px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+    }
+
+    TextEntry
+    {
+        background-color: black;
+    }
+
+    .circle-canvas
+    {
+        flex-wrap: wrap;
+        flex-shrink: 1;
+        flex-grow: 0;
+
+        .circle
+        {
+            margin: 5px;
+            background-color: white;
+            border-radius: 100px;
+            color: black;
+            width: 40px;
+            height: 40px;
+            white-space: nowrap;
+            padding: 5px;
+            justify-content: center;
+        }
+    }
+
+</style>
+
+<root>
+
+    <column style="width: 100%;">
+        <TextEntry Value:bind=@WebPanel.Surface.Url></TextEntry>
+
+        <WebPanel style="width: 100%; flex-grow: 1;" @ref="WebPanel"></WebPanel>
+    </column>
+
+</root>
+
+
+@code{
+
+
+
+    public WebPanel WebPanel { get; set; }
+
+    protected override void OnAfterTreeRender(bool firstTime)
+    {
+        base.OnAfterTreeRender(firstTime);
+
+        if ( firstTime )
+        {
+            WebPanel.Surface.Url = "https://google.com";
+        }
+    }
+
+    protected override int BuildHash()
+    {
+        // this will force a rebuild every time the date time string changes
+        return HashCode.Combine( DateTime.Now.ToString());
+    }
+
+}

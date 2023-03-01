@@ -1,0 +1,2 @@
+# Code in here might be outdated, these projects are  achieved and not maintained anymore.
+## Do not make pull requests to this folder or it's content, it is not maintained anymore and only here for reference or educational purposes.

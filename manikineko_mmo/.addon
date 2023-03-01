@@ -1,0 +1,48 @@
+{
+  "Title": "Manikineko MMO Core[W.I.P]",
+  "Type": "game",
+  "Org": "manikineko",
+  "Ident": "manikineko_mmo",
+  "Tags": null,
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": [],
+  "HasCode": true,
+  "CodePath": "/code/",
+  "Metadata": {
+    "MaxPlayers": 64,
+    "MinPlayers": 1,
+    "GameNetworkType": "Multiplayer",
+    "MapSelect": "Tagged",
+    "MapList": [
+      "facepunch.flatgrass"
+    ],
+    "ResourcePaths": [
+      "/ui/*",
+      "/textures/ui/*",
+      "/models/*"
+    ],
+    "RankType": "None",
+    "PerMapRanking": false,
+    "LeaderboardType": "None",
+    "ProjectTemplate": null,
+    "CsProjName": "",
+    "SavedGames": true,
+    "MapDependentSaves": true,
+    "SaveFormatVersion": 0,
+    "ControlModes": {
+      "Keyboard": true,
+      "Gamepad": true
+    },
+    "Compiler": {
+      "RootNamespace": "Manikineko.MMO.Core",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;"
+    },
+    "Summary": "Open Source MMO toolkit for S\u0026Box",
+    "Description": "An Work in process MMORPG Toolkit for S\u0026Box",
+    "Public": true,
+    "ReplaceTags": "mmo toolkit manikineko"
+  }
+}

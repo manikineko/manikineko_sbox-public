@@ -1,0 +1,144 @@
+{
+  "Title": "Manikineko Sandbox",
+  "Type": "game",
+  "Org": "manikineko",
+  "Ident": "manikineko_sbox",
+  "Tags": "sandbox thirdperson gamemode",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": [
+    "/ui/*",
+    "/textures/ui/*",
+    "/models/*"
+  ],
+  "HasCode": true,
+  "CodePath": "code",
+  "Metadata": {
+    "MapList": [
+      "facepunch.construct"
+    ],
+    "PerMapRanking": false,
+    "LeaderboardType": "None",
+    "RankType": "None",
+    "MapSelect": "Unrestricted",
+    "GameNetworkType": "Multiplayer",
+    "MaxPlayers": 64,
+    "MinPlayers": 1,
+    "Collision": {
+      "Defaults": {
+        "solid": "Collide",
+        "trigger": "Trigger",
+        "ladder": "Ignore",
+        "water": "Trigger",
+        "debris": "Unset",
+        "player": "Unset",
+        "glass": "Unset"
+      },
+      "Pairs": [
+        {
+          "a": "solid",
+          "b": "solid",
+          "r": "Collide"
+        },
+        {
+          "a": "trigger",
+          "b": "playerclip",
+          "r": "Ignore"
+        },
+        {
+          "a": "solid",
+          "b": "trigger",
+          "r": "Trigger"
+        },
+        {
+          "a": "playerclip",
+          "b": "solid",
+          "r": "Collide"
+        },
+        {
+          "a": "debris",
+          "b": "debris"
+        },
+        {
+          "a": "debris",
+          "b": "player",
+          "r": "Ignore"
+        },
+        {
+          "a": "trigger",
+          "b": "player"
+        },
+        {
+          "a": "ladder",
+          "b": "player"
+        },
+        {
+          "a": "trigger",
+          "b": "debris"
+        },
+        {
+          "a": "ladder",
+          "b": "debris"
+        },
+        {
+          "a": "player",
+          "b": "player"
+        },
+        {
+          "a": "player",
+          "b": "glass",
+          "r": "Trigger"
+        },
+        {
+          "a": "trigger",
+          "b": "glass",
+          "r": "Ignore"
+        },
+        {
+          "a": "glass",
+          "b": "glass",
+          "r": "Ignore"
+        },
+        {
+          "a": "water",
+          "b": "glass"
+        }
+      ]
+    },
+    "GameCategory": "None",
+    "Physics": {
+      "SubSteps": 4,
+      "TimeScale": 1,
+      "Gravity": "0,0,-800",
+      "AirDensity": 1.2,
+      "SleepingEnabled": true,
+      "SimulationMode": "Continuous",
+      "PositionIterations": 2,
+      "VelocityIterations": 8,
+      "SoftBodyIterations": 1,
+      "SoftBodySubsteps": 1
+    },
+    "DefaultLeaderboards": null,
+    "Summary": "Third Person MMO Sandbox",
+    "Description": "W.I.P Sandbox based MMORPG Styled gamemode",
+    "Public": true,
+    "ReplaceTags": "sandbox game dynamic spawnmenu physgun mmo rpg thirdperson",
+    "CsProjName": "",
+    "PackageSettings": [
+      {
+        "DisplayType": "Boolean",
+        "Choices": [],
+        "ConVarName": "allow_spawnmenu",
+        "DisplayName": "Allow Spawnmenu",
+        "DefaultValue": "true",
+        "Description": "Allow the spawning of objects by pressing Q(Currently Broken)",
+        "Group": ""
+      }
+    ],
+    "ParentPackage": "facepunch.sandbox",
+    "SavedGames": true,
+    "MapDependentSaves": true,
+    "SaveFormatVersion": 1001
+  }
+}
