@@ -6,15 +6,21 @@
   "Tags": null,
   "Schema": 1,
   "HasAssets": true,
-  "AssetsPath": "",
-  "ResourcePaths": [],
+  "AssetsPath": "/",
+  "ResourcePaths": [
+    "/ui/*",
+    "/textures/*",
+    "/models/*",
+    "/code/Styles/*",
+    "/code/ui/*"
+  ],
   "HasCode": true,
   "CodePath": "/code/",
   "Metadata": {
     "MaxPlayers": 64,
     "MinPlayers": 1,
     "GameNetworkType": "Multiplayer",
-    "MapSelect": "Tagged",
+    "MapSelect": "Official",
     "MapList": [
       "facepunch.flatgrass"
     ],
