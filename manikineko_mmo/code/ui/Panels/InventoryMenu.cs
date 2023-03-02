@@ -4,6 +4,7 @@ using Sandbox.UI;
 using Sandbox.UI.Construct;
 using Manikineko.MMO.Core.ui;
 using Manikineko.MMO.Core.ui.Panels;
+using Manikineko.MMO.Core.Config;
 
 [Library]
 public partial class InventoryMenu : Panel
@@ -31,11 +32,12 @@ public partial class InventoryMenu : Panel
 				var browser = body.AddChild<BrowserPanel>();
 				browser.Style.Display = DisplayMode.None;
 
-				tabs.AddButtonActive( "Click here to open a websurface", ( b ) => {
-
+				tabs.AddButtonActive( ServerConfig.GetServerConfig().name + "'s Homepage", ( b ) => {
+				
 					browser.SetClass( "active", b );
 					if ( b )
-					{
+					{ 
+						browser.SetURL( ServerConfig.GetServerConfig().server_homepage);
 						browser.Style.Display = DisplayMode.Flex;
 					}
 					else

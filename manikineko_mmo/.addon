@@ -6,13 +6,14 @@
   "Tags": null,
   "Schema": 1,
   "HasAssets": true,
-  "AssetsPath": "/",
+  "AssetsPath": "",
   "ResourcePaths": [
     "/ui/*",
     "/textures/*",
     "/models/*",
     "/code/Styles/*",
-    "/code/ui/*"
+    "/code/ui/*",
+    "/cfg/*"
   ],
   "HasCode": true,
   "CodePath": "/code/",

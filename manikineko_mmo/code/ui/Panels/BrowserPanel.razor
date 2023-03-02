@@ -58,8 +58,6 @@
 <root>
 
     <column style="width: 100%;">
-        <TextEntry Value:bind=@WebPanel.Surface.Url></TextEntry>
-
         <WebPanel style="width: 100%; flex-grow: 1;" @ref="WebPanel"></WebPanel>
     </column>
 
@@ -71,15 +69,20 @@
 
 
     public WebPanel WebPanel { get; set; }
-
+    public string URL { get; set; } = "https://manikineko.nl";
     protected override void OnAfterTreeRender(bool firstTime)
     {
         base.OnAfterTreeRender(firstTime);
-
+        WebPanel.Surface.Url = URL;
         if ( firstTime )
         {
-            WebPanel.Surface.Url = "https://google.com";
+
         }
+
+    }
+    public void SetURL(string _URL)
+    {
+        URL = _URL;
     }
 
     protected override int BuildHash()

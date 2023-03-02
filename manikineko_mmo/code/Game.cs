@@ -1,8 +1,11 @@
-﻿using Sandbox;
+﻿using Manikineko.MMO.Core.Config;
+using Sandbox;
+using Sandbox.Diagnostics;
 using Sandbox.UI.Construct;
 using System;
 using System.IO;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Threading.Tasks;
 using static Sandbox.Event;
 
@@ -21,12 +24,14 @@ namespace Sandbox;
 public partial class MMOGame : GameManager
 {
 	public static MMOGame instance;
+	
 	public MMOGame()
 	{
 		instance = this;
 		if ( Game.IsServer )
 		{
-			foreach(IClient client in Game.Clients )
+
+			foreach (IClient client in Game.Clients )
 			{
 				
 			}
@@ -34,7 +39,7 @@ public partial class MMOGame : GameManager
 			_ = new MMOHud();
 		}
 	}
-
+	
 	public override void ClientJoined( IClient cl )
 	{
 		base.ClientJoined( cl );
